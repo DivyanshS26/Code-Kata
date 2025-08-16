@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
+
+import com.cgi.tennis.step3.Step3;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -59,7 +61,7 @@ class TennisTest {
     @ParameterizedTest
     @MethodSource("refactoringSteps")
     public void checkTennisGameToBeRefactored(Class<? extends TennisGame> clazz, int pointsPlayer1, int pointsPlayer2, String exepctedResult) {
-        TennisGame game = new Step2("player1", "player2");
+        TennisGame game = new Step3("player1", "player2");
         checkAllScores(game, pointsPlayer1, pointsPlayer2, "player1", "player2", exepctedResult);
     }
 
