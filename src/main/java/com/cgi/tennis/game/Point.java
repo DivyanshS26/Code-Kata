@@ -1,6 +1,6 @@
-package com.cgi.tennis.step3;
+package com.cgi.tennis.game;
 
-class Point {
+public class Point {
     private final int value;
     public Point(int value) { this.value = value; }
     public boolean lessThan(int other) { return value < other; }

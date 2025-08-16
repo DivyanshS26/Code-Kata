@@ -1,15 +1,17 @@
-package com.cgi.tennis.step3;
+package com.cgi.tennis;
 
-import com.cgi.tennis.TennisGame;
+import com.cgi.tennis.game.PlayerName;
+import com.cgi.tennis.game.Point;
+import com.cgi.tennis.game.PointName;
 
-public class Step3 implements TennisGame {
+public class Step4 implements TennisGame {
 
     private Point p1;
     private Point p2;
     private PlayerName p1N;
     private PlayerName p2N;
 
-    public Step3(String p1N, String p2N) {
+    public Step4(String p1N, String p2N) {
         this.p1N = new PlayerName(p1N);
         this.p2N = new PlayerName(p2N);
         this.p1 = new Point(0);
@@ -28,12 +30,11 @@ public class Step3 implements TennisGame {
     }
 
     private String getNormalScore() {
-        String[] points = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-        String score = points[p1.value()];
+        String score = PointName.fromValue(p1.value()).getName();
         if (p1.equals(p2)) {
             return score + "-All";
         }
-        return score + "-" + points[p2.value()];
+        return score + "-" + PointName.fromValue(p2.value()).getName();
     }
 
     private String getSpecialScore() {

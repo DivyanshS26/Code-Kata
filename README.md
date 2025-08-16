@@ -24,3 +24,12 @@ Each method should have just one block of indentation:
 3. Encapsulated logic in value objects (add, lessThan, equals) instead of scattering math.
 
 4. Result: More expressive, self-documenting code (no more primitive obsession).
+
+**Step 4** First class collections
+1. Wrapped the raw array of score names inside a dedicated class PointNames.
+
+2. All logic for point → word mapping moved into PointNames, not scattered.
+
+3. Main class now asks pointNames.nameFor(p1) instead of touching arrays directly.
+
+4. Result: Collections got a home; clear responsibility separation if scoring rules change.

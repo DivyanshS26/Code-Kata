@@ -1,7 +1,5 @@
 package com.cgi.tennis;
 
-import java.util.Objects;
-
 public class Step1 implements TennisGame {
 
     private int p1;
@@ -55,7 +53,7 @@ public class Step1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (Objects.equals(playerName, this.p1N)) {
+        if (playerName.equals(this.p1N)) {
             this.p1 += 1;
         } else {
             this.p2 += 1;

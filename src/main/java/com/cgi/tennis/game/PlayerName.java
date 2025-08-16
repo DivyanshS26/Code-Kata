@@ -1,6 +1,6 @@
-package com.cgi.tennis.step3;
+package com.cgi.tennis.game;
 
-class PlayerName {
+public class PlayerName {
     private final String name;
     public PlayerName(String name) { this.name = name; }
     public boolean equals(Object obj) {

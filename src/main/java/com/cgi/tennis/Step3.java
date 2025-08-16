@@ -1,17 +1,21 @@
 package com.cgi.tennis;
 
-import java.util.Objects;
 
-public class Step2 implements TennisGame {
+import com.cgi.tennis.game.PlayerName;
+import com.cgi.tennis.game.Point;
 
-    private int p1;
-    private int p2;
-    private String p1N;
-    private String p2N;
+public class Step3 implements TennisGame {
 
-    public Step2(String p1N, String p2N) {
-        this.p1N = p1N;
-        this.p2N = p2N;
+    private Point p1;
+    private Point p2;
+    private PlayerName p1N;
+    private PlayerName p2N;
+
+    public Step3(String p1N, String p2N) {
+        this.p1N = new PlayerName(p1N);
+        this.p2N = new PlayerName(p2N);
+        this.p1 = new Point(0);
+        this.p2 = new Point(0);
     }
 
     public String getScore() {
@@ -22,32 +26,31 @@ public class Step2 implements TennisGame {
     }
 
     private boolean isNormalScore() {
-        return p1 < 4 && p2 < 4 && (p1 + p2 != 6);
+        return p1.lessThan(4) && p2.lessThan(4) && (p1.value() + p2.value() != 6);
     }
 
     private String getNormalScore() {
         String[] points = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-        String score = points[p1];
-
-        if (p1 == p2) {
+        String score = points[p1.value()];
+        if (p1.equals(p2)) {
             return score + "-All";
         }
-        return score + "-" + points[p2];
+        return score + "-" + points[p2.value()];
     }
 
     private String getSpecialScore() {
-        if (p1 == p2) {
+        if (p1.equals(p2)) {
             return "Deuce";
         }
         return getAdvantageOrWin();
     }
 
     private String getAdvantageOrWin() {
-        String player = p1 > p2 ? p1N : p2N;
+        PlayerName player = p1.greaterThan(p2) ? p1N : p2N;
         if (isAdvantageScore()) {
-            return "Advantage " + player;
+            return "Advantage " + player.name();
         }
-        return "Win for " + player;
+        return "Win for " + player.name();
     }
 
     private boolean isAdvantageScore() {
@@ -55,15 +58,15 @@ public class Step2 implements TennisGame {
     }
 
     private int squareOfDifference() {
-        int diff = p1 - p2;
+        int diff = p1.value() - p2.value();
         return diff * diff;
     }
 
     public void wonPoint(String playerName) {
         if (playerName.equals(this.p1N)) {
-            this.p1 += 1;
+            p1 = p1.add(1);
             return;
         }
-        this.p2 += 1;
+        p2 = p2.add(1);
     }
 }
