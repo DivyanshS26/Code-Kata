@@ -33,3 +33,12 @@ Each method should have just one block of indentation:
 3. Main class now asks pointNames.nameFor(p1) instead of touching arrays directly.
 
 4. Result: Collections got a home; clear responsibility separation if scoring rules change.
+
+**Step 5** Law of Demeter
+1. Broke down chained calls in getNormalScore() to assign intermediate results to variables with one method call per line.
+
+2. This makes the code easier to read and debug.
+
+3. Maintains the existing logic and ensures that all your existing test cases will continue to pass.
+
+4. Keeps adherence to the Law of Demeter for better design and maintainability.
