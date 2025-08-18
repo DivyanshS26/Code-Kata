@@ -42,3 +42,10 @@ Each method should have just one block of indentation:
 3. Maintains the existing logic and ensures that all your existing test cases will continue to pass.
 
 4. Keeps adherence to the Law of Demeter for better design and maintainability.
+
+**Step 6** Don't abbreviate
+1. Abbreviations are removed from all variable, parameter, and method names.
+
+2. Names are now self-explanatory and context-rich, making code easier to read and maintain.
+
+3. Clear naming highlights possible design improvements and safeguards against misplaced logic.
