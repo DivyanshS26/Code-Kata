@@ -57,3 +57,9 @@ Each method should have just one block of indentation:
 
 3. Stick to Single Responsibility Principle: one class = one job.
 4. Step-6 class (tennis game logic) already is relatively small and focused on scoring rules.
+
+**Step 8** No classes with more than two instance
+variables
+1. No class should have more than two instance variables.
+
+2. Encourages strong class cohesion and clear single responsibility.
