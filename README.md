@@ -63,3 +63,9 @@ variables
 1. No class should have more than two instance variables.
 
 2. Encourages strong class cohesion and clear single responsibility.
+
+**Step 9** Tell, Don’t Ask
+1. This design properly follows the Tell, Don’t Ask principle, promoting clean encapsulation and responsibility separation.
+
+2. Additional Step 9 refactoring would provide little benefit and may introduce unnecessary complexity.
+3. If needed we can implement some encapsulation in scorepoint() method of Player class.
