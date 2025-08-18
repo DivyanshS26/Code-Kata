@@ -49,3 +49,11 @@ Each method should have just one block of indentation:
 2. Names are now self-explanatory and context-rich, making code easier to read and maintain.
 
 3. Clear naming highlights possible design improvements and safeguards against misplaced logic.
+
+**Step 7** Keep all entities small
+1. Classes should ideally be less than 50 lines.
+
+2. Packages should contain no more than 10 files.
+
+3. Stick to Single Responsibility Principle: one class = one job.
+4. Step-6 class (tennis game logic) already is relatively small and focused on scoring rules.
